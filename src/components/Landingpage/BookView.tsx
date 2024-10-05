@@ -4,7 +4,7 @@ import { Loader } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useMemo } from "react";
 import dynamic from 'next/dynamic';
-import styles from '@/components/landingpage/ebook/App.module.css'; // Standardize CSS module import
+import styles from '@/components/landingpage/ebook/App.Module.css'; // Standardize CSS module import
 
 const Experience = dynamic(() => import('@/components/Landingpage/ebook/Experience').then((mod) => mod.Experience), { ssr: false });
 const UI = dynamic(() => import('@/components/Landingpage/ebook/Ui').then((mod) => mod.UI), { ssr: false });
