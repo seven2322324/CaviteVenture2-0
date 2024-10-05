@@ -1,28 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Enables React's Strict Mode
-  swcMinify: true, // Enables SWC-based minification for faster builds
+  reactStrictMode: true, // Enables React's Strict Mode for development warnings
+  swcMinify: true, // Enables faster builds with SWC minification
+  target: 'serverless', // Ensures serverless deployment or static export
+  trailingSlash: true, // Ensures all pages are statically exported with a trailing slash
   images: {
-    domains: ['source.unsplash.com', 'your-image-domain.com'], // Added 'source.unsplash.com' for external images
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
-  typescript: {
-    ignoreBuildErrors: true,
+    domains: ['source.unsplash.com', 'your-image-domain.com'], // External image domains
   },
   env: {
-    MONGO_URI: process.env.MONGO_URI, // Exposes MongoDB URI to your app
+    MONGO_URI: process.env.MONGO_URI, // Environment variable for MongoDB URI
+  },
+  experimental: {
+    outputStandalone: true, // Enable standalone output mode for Docker or custom server deployments
+    scrollRestoration: true, // Enable scroll restoration across navigation
+  },
+  async rewrites() {
+    // Return an empty array to ensure no rewrites are performed
+    return [];
   },
   webpack: (config, { dev, isServer }) => {
-    // Custom Webpack configuration
+    // Custom Webpack configurations
     if (dev) {
-      config.cache = false; // Disable persistent caching in development for debugging
+      config.cache = false; // Disable caching in development for better debugging experience
     }
 
     if (!dev && isServer) {
-      // This will optimize the size of the server-side bundles
+      // Optimize the server-side bundle for production
       config.optimization.splitChunks = {
         chunks: 'all',
         minSize: 20000,
@@ -30,7 +33,7 @@ const nextConfig = {
       };
     }
 
-    // Add any additional custom rules or plugin modifications here
+    // Add more custom webpack configurations as needed
 
     return config;
   },
