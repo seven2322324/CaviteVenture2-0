@@ -1,30 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Enables React's Strict Mode for development warnings
-  swcMinify: true, // Enables faster builds with SWC minification
-  trailingSlash: true, // Ensures all pages are statically exported with a trailing slash
+  reactStrictMode: true, // Enable React Strict Mode
+  swcMinify: true, // Enable SWC-based minification for faster builds
+
+  // Optimization for static exports and images
   images: {
     domains: ['source.unsplash.com', 'your-image-domain.com'], // External image domains
   },
+
   env: {
-    MONGO_URI: process.env.MONGO_URI, // Environment variable for MongoDB URI
+    MONGO_URI: process.env.MONGO_URI, // MongoDB URI exposed to the app
   },
+
+  // Optimize server-side build and avoid unnecessary lambda functions
   experimental: {
-    outputStandalone: true, // Enable standalone output mode for Docker or custom server deployments
-    scrollRestoration: true, // Enable scroll restoration across navigation
+    // Use this option for standalone static builds
+    outputStandalone: true, // Ensures the app runs independently without lambdas for pages
   },
-  async rewrites() {
-    // Return an empty array to ensure no rewrites are performed
-    return [];
-  },
+
   webpack: (config, { dev, isServer }) => {
-    // Custom Webpack configurations
+    // Custom Webpack configuration
     if (dev) {
-      config.cache = false; // Disable caching in development for better debugging experience
+      config.cache = false; // Disable caching in development
     }
 
     if (!dev && isServer) {
-      // Optimize the server-side bundle for production
+      // This will optimize the size of the server-side bundles
       config.optimization.splitChunks = {
         chunks: 'all',
         minSize: 20000,
@@ -32,9 +33,37 @@ const nextConfig = {
       };
     }
 
-    // Add more custom webpack configurations as needed
+    // You can add additional Webpack rules or plugin modifications here
 
     return config;
+  },
+
+  async headers() {
+    return [
+      {
+        // Add security headers
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+        ],
+      },
+    ];
+  },
+
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: '/api/:path*', // Proxy to API
+      },
+    ];
   },
 };
 
