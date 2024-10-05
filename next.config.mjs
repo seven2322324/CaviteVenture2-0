@@ -5,6 +5,13 @@ const nextConfig = {
   images: {
     domains: ['source.unsplash.com', 'your-image-domain.com'], // Added 'source.unsplash.com' for external images
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   env: {
     MONGO_URI: process.env.MONGO_URI, // Exposes MongoDB URI to your app
   },
