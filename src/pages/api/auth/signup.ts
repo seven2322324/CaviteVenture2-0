@@ -84,9 +84,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     await transporter.sendMail(mailOptions);
 
     // Respond with a success message
-    res.status(201).json({ message: 'User registered, please verify your email' });
+    return res.status(201).json({ message: 'User registered, please verify your email' });
   } catch (error) {
     console.error('Error during user signup:', error);
-    res.status(500).json({ message: 'Server error' });
+
+    if (error instanceof Error && 'response' in error) {
+      const err = error as { response: { status: number } };
+      if (err.response?.status === 429) {
+        return res.status(429).json({ message: 'Too many requests. Please try again later.' });
+      }
+    }
+
+    // General error handling
+    return res.status(500).json({ message: 'Server error' });
   }
 }
