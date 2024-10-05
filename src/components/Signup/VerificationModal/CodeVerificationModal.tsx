@@ -1,4 +1,4 @@
-'use client';
+
 
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/Signup/Ui/Dialog";
