@@ -4,10 +4,8 @@ import { Loader } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useMemo } from "react";
 import dynamic from 'next/dynamic';
-import styles from '@/components/Landingpage/ebook/App.module.css';
 
 const Experience = dynamic(() => import('@/components/Landingpage/ebook/Experience').then((mod) => mod.Experience), { ssr: false });
-const UI = dynamic(() => import('@/components/Landingpage/ebook/Ui').then((mod) => mod.UI), { ssr: false });
 
 const App: React.FC = () => {
   const canvasMemo = useMemo(() => (
@@ -28,9 +26,9 @@ const App: React.FC = () => {
   ), []);
 
   return (
-    <div className={styles.fullScreenContainer}>
+    <div className="flex justify-center items-center mx-auto w-full min-h-screen md:w-[85vw] md:h-[65vh] lg:w-[80vw] lg:h-[60vh]">
       <Suspense fallback={<div>Loading UI...</div>}>
-        <UI />
+       
       </Suspense>
       {canvasMemo}
     </div>
