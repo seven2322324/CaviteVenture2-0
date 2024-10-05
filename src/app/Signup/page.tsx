@@ -154,8 +154,6 @@ export default function SignUp() {
       </div>
 
       <div className="w-full max-w-lg md:max-w-2xl space-y-8 bg-white bg-opacity-70 p-6 md:p-8 rounded-xl backdrop-blur-sm relative z-10 shadow-lg">
-        <div className="absolute -right-20 top-1/2 transform -translate-y-1/2 w-32 md:w-40 h-60 md:h-80 bg-[#fae8b4] rounded-full filter blur-3xl opacity-30 animate-glow"></div>
-
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
