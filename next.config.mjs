@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true, // Enables React's Strict Mode for development warnings
   swcMinify: true, // Enables faster builds with SWC minification
-  target: 'serverless', // Ensures serverless deployment or static export
   trailingSlash: true, // Ensures all pages are statically exported with a trailing slash
   images: {
     domains: ['source.unsplash.com', 'your-image-domain.com'], // External image domains
