@@ -12,10 +12,12 @@ const nextConfig = {
     MONGO_URI: process.env.MONGO_URI, // MongoDB URI exposed to the app
   },
 
-  // Optimize server-side build and avoid unnecessary lambda functions
+  // Use 'standalone' output instead of 'outputStandalone'
+  output: 'standalone',
+
+  // Enable App Router
   experimental: {
-    // Use this option for standalone static builds
-    outputStandalone: true, // Ensures the app runs independently without lambdas for pages
+    appDir: true,
   },
 
   webpack: (config, { dev, isServer }) => {
@@ -62,6 +64,10 @@ const nextConfig = {
       {
         source: '/api/:path*',
         destination: '/api/:path*', // Proxy to API
+      },
+      {
+        source: '/Signup',
+        destination: '/signup',
       },
     ];
   },
