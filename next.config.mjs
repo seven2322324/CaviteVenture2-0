@@ -12,13 +12,8 @@ const nextConfig = {
     MONGO_URI: process.env.MONGO_URI, // MongoDB URI exposed to the app
   },
 
-  // Use 'standalone' output instead of 'outputStandalone'
+  // Use 'standalone' output
   output: 'standalone',
-
-  // Enable App Router
-  experimental: {
-    appDir: true,
-  },
 
   webpack: (config, { dev, isServer }) => {
     // Custom Webpack configuration
