@@ -9,13 +9,13 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 
-import { Button } from '@/components/Signup/Ui/Button'
-import { Input } from '@/components/Signup/Ui/Input'
-import { Textarea } from '@/components/Signup/Ui/textarea'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/Signup/Ui/Select'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/Signup/Ui/form'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/Signup/Ui/card'
-import { useToast } from '@/components/Signup/Ui/use-toast'
+import { Button } from '@/components/Signup12/Ui/Button'
+import { Input } from '@/components/Signup12/Ui/Input'
+import { Textarea } from '@/components/Signup12/Ui/textarea'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/Signup12/Ui/Select'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/Signup12/Ui/form'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/Signup12/Ui/card'
+import { useToast } from '@/components/Signup12/Ui/use-toast'
 
 const locations = ['Binakayan', 'Rosario', 'Cavite City', 'Bacoor']
 
