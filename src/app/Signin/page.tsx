@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Button } from "@/components/Signup/Ui/Button"
-import { Input } from "@/components/Signup/Ui/Input"
-import { Label } from "@/components/Signup/Ui/Label"
+import { Button } from "@/components/Signup12/Ui/Button"
+import { Input } from "@/components/Signup12/Ui/Input"
+import { Label } from "@/components/Signup12/Ui/Label"
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FiMail, FiLock, FiEye, FiEyeOff } from 'react-icons/fi'
