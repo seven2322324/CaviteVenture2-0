@@ -47,7 +47,7 @@ export default function SignUp() {
     };
 
     try {
-      const response = await fetch('/api/auth/signup', {
+      const response = await fetch('/api/auth/signup/route', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ export default function SignUp() {
       if (res.ok) {
         alert('Verification successful! Redirecting to sign in.');
         setVerificationModalOpen(false);
-        router.push('/Signin');
+        router.push('/signin');
       } else {
         alert('Invalid verification code.');
       }
