@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Input } from "@/components/Signup/Ui/Input"
-import { Button } from "@/components/Signup/Ui/Button"
+import { Input } from "@/components/Signup12/Ui/Input"
+import { Button } from "@/components/Signup12/Ui/Button"
 import { toast } from 'react-hot-toast'
 
 interface ResetPasswordModalProps {
