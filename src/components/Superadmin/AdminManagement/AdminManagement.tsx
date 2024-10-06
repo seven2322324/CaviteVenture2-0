@@ -8,8 +8,8 @@ import {
   MagnifyingGlassIcon,
   UserPlusIcon,
 } from "@heroicons/react/24/outline";
-import { Input } from "@/components/Signup/Ui/Input";
-import { Button } from "@/components/Signup/Ui/Button";
+import { Input } from "@/components/Signup12/Ui/Input";
+import { Button } from "@/components/Signup12/Ui/Button";
 import {
   Table,
   TableBody,
@@ -17,7 +17,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/Signup/Ui/Table";
+} from "@/components/Signup12/Ui/Table";
 import {
   Dialog,
   DialogContent,
@@ -25,15 +25,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/Signup/Ui/Dialog";
-import { Label } from "@/components/Signup/Ui/Label";
+} from "@/components/Signup12/Ui/Dialog";
+import { Label } from "@/components/Signup12/Ui/Label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/Signup/Ui/Select";
+} from "@/components/Signup12/Ui/Select";
 
 interface User {
   _id: string; // MongoDB uses _id instead of id
