@@ -7,7 +7,6 @@ import ParticleRing from "@/components/Landingpage/ParticleRing";
 import { Testimonials } from "@/components/Landingpage/Testimonials";
 import { CallToAction } from "@/components/Landingpage/CallToAction";
 
-
 export default function Home() {
   return (
    <>
