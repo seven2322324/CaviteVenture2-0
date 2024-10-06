@@ -1,3 +1,4 @@
+"use client";
 import RightArrow from "@/assets/HeaderImages/arrow-right.svg";
 import Image from "next/image";
 import starImage from "@/assets/CallToActionImages/star.png";
