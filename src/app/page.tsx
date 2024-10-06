@@ -1,4 +1,3 @@
-"use client";
 import { Hero } from "@/components/Landingpage/Hero";
 import { LogoTicker } from "@/components/Landingpage/LogoTicker";
 import BookView from "@/components/Landingpage/BookView"
