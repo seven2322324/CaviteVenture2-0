@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Toaster, toast } from "react-hot-toast";
 import { ChevronUpIcon, ChevronDownIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { Input } from "@/components/Signup/Ui/Input";
+import { Input } from "@/components/Signup12/Ui/Input";
 import {
   Table,
   TableBody,
@@ -12,15 +12,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/Signup/Ui/Table";
+} from "@/components/Signup12/Ui/Table";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/Signup/Ui/Select";
-import { Button } from "@/components/Signup/Ui/Button";
+} from "@/components/Signup12/Ui/Select";
+import { Button } from "@/components/Signup12/Ui/Button";
 
 interface User {
   _id: string;
